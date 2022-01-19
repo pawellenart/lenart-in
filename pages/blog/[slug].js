@@ -3,6 +3,7 @@ import DefaultErrorPage from 'next/error';
 
 import { useRouter } from 'next/router';
 import postData from '../../lib/postData';
+import BlogPost from '../../components/BlogPost';
 
 const Post = () => {
   const router = useRouter();
@@ -25,7 +26,11 @@ const Post = () => {
     );
   }
 
-  return <div>Post: {post?.title}</div>;
+  return (
+    <div className="mt-10">
+      <BlogPost post={post} />;
+    </div>
+  );
 };
 
 export default Post;
